@@ -13,6 +13,7 @@ public interface PatientRepository extends JpaRepository<Patient,Integer> {
 	@Query(value="select e from Patient e where e.email=:em and e.password=:pas")
    public Patient findByPatientEmail( @Param("em") String email,@Param("pas") String password);
 
+	@Query(value ="select e from Patient e where e.email =:em ")
+	public Patient findByPatientByUsername( @Param("em") String email);
 
 }
- 

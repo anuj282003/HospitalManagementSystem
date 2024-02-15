@@ -33,7 +33,7 @@ public class PatientController {
 	@PostMapping("/fetchById")
 	 public String fetchPatient(@Param(value = "p_id") String p_id ,@Param(value = "password") String password,Model model) {
 		 Patient pt =ptser.fetchPatient(p_id,password);
-		 
+
 		 String p_name=pt.getP_name();
 		 model.addAttribute("p_name",p_name);
 		 if(pt!=null) {

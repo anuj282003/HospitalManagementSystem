@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.project.hospitalmanagement.utilities.AppointMent;
-import com.project.hospitalmanagement.utilities.Doctor;
 public interface AppointRepository extends JpaRepository<AppointMent,Integer> {
 
 	@Query(value="select e from AppointMent e where e.doctor_id =:em and e.date =:dt and e.patient_id =:pid")

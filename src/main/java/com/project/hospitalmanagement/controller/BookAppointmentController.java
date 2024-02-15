@@ -15,25 +15,25 @@ public class BookAppointmentController {
 	@Autowired
 	BookAppointment bkap;
 	Patient pt;
-	
+
 	@GetMapping("/map-appoint")
 	public String mapappoint() {
 		return "bookappointment";
 	}
-	
-	
+
+
 	@PostMapping("/appoint")
 	public String bookAppointment(AppointMent ap, Model model) {
 		if((bkap.BookAppointmentCheck(ap))!= null) {
 			return "bookappointment";
 		}
 		else {
-			
-			
+
+
 			bkap.BookAppointment(ap);
 			return "appointmentsuccess";
 		}
-		
+
 
 	}
 

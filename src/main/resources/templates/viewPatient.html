@@ -3,21 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Form</title>
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
+        #sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: #555;
+            padding-top: 20px;
+            position: fixed;
+        }
+
+        #main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #444;
+        }
+
+        .content {
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .appointbutton{
+              border:1px solid black;
+              display:inline-block;
+              padding:23px;
+              
+        }
+        .appointbutton>a{
+         text-decoration:none;
+        
+        }
+    </style>
 </head>
 <body>
 
-<h1>Hello  <span th:text="${p_name}"></span> !!!</h1>
+    <header>
+        <h1>Hello  <span th:text="${p_name}"></span> !!!</h1>
+    </header>
 
-<a href="map-appoint">Book Appointment</a>
+    <div id="sidebar">
+        <a href="#" class="menu-item">Home</a>
+        <a href="#" class="menu-item">Dashboard</a>
+        <a href="#" class="menu-item">Profile</a>
+        <a href="#" class="menu-item">Settings</a>
+    </div>
 
-
-
+    <div id="main-content">
+        <div class="content">
+            <h2>Welcome to the Hospital Management System </h2>
+            <p>This is the main content area. You can add various widgets and information here.</p>
+           <div class="appointbutton">
+            <a href="map-appoint">Book Appointment</a>
+            </div> 
+        </div>
+    </div>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

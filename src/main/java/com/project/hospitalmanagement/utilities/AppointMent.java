@@ -15,7 +15,7 @@ public class AppointMent {
 		int doctor_id;
 		public AppointMent() {
 			super();
-			
+
 		}
 		String date;
 		public AppointMent(int id, int patient_id, int doctor_id, String date) {

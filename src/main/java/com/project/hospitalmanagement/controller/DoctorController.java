@@ -16,7 +16,7 @@ public class DoctorController {
 	@GetMapping("/map-fetchdoctor")
 	public String fetchDoctor(Model model) {
 //		List<Doctor>ldoct=dtrser.fetchDoctor();
-		
+
 		List<Doctor> ldoct =dtrser.fetchDoctor();
 		model.addAttribute("Doctors",ldoct);
 		return "viewdoctor";

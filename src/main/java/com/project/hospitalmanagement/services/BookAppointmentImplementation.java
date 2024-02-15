@@ -8,11 +8,11 @@ import com.project.hospitalmanagement.utilities.AppointMent;
 
 @Service
 public class BookAppointmentImplementation implements BookAppointment {
-	
+
 	@Autowired
 	AppointRepository aptrepo;
-	
-	
+
+
 	@Override
 	public AppointMent BookAppointmentCheck(AppointMent ap) {
 
@@ -20,15 +20,6 @@ public class BookAppointmentImplementation implements BookAppointment {
 		if(apt != null) {
 		   return apt;
 		}
-		
-		
-//		if(ap != null) {
-//			
-//		}
-//		else {
-//			aptrepo.save(ap);
-//			
-//		}
 		return null;
 	}
 
@@ -39,5 +30,5 @@ public class BookAppointmentImplementation implements BookAppointment {
 		return "saved" ;
 	}
 
-	
+
 }
