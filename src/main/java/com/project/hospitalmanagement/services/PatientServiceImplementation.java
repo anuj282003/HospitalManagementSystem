@@ -26,10 +26,11 @@ public class PatientServiceImplementation implements PatientService {
 	@Override
 	public Patient fetchPatient(String p_id,String password) {
 
-		Patient pt=ptrepo.findByPatientEmail(p_id, password);
+		Patient pt=ptrepo.findByEmail(p_id, password);
 		System.out.println(pt);
 		return pt ;
 
 	}
+
 
 }

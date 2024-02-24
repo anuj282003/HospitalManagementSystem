@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.project.hospitalmanagement.services.PatientService;
 import com.project.hospitalmanagement.utilities.Patient;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class PatientController {
 	PatientService ptser;
@@ -19,6 +21,7 @@ public class PatientController {
 
 	@GetMapping("/map-addpatient")
 	 public String mapAddPatient() {
+		
 		 return "addPatient";
 	 }
 
@@ -31,12 +34,16 @@ public class PatientController {
 
 	@SuppressWarnings("unused")
 	@PostMapping("/fetchById")
-	 public String fetchPatient(@Param(value = "p_id") String p_id ,@Param(value = "password") String password,Model model) {
+	 public String fetchPatient(@Param(value = "p_id") String p_id ,@Param(value = "password") String password,Model model,HttpSession session) {
 		 Patient pt =ptser.fetchPatient(p_id,password);
-
-		 String p_name=pt.getP_name();
-		 model.addAttribute("p_name",p_name);
+		 session.setAttribute("p_id", p_id);
+		 session.setAttribute("passwprd", password);
+		 
 		 if(pt!=null) {
+		String p_name=pt.getP_name();
+		int id=pt.getId();
+		 model.addAttribute("p_name",p_name);
+		 model.addAttribute("p_id",id);
 		 return "viewPatient";
 		 }
 		 else {
@@ -48,9 +55,9 @@ public class PatientController {
 
 
 	@PostMapping("/addPatient")
-	 public String addPatient(@ModelAttribute Patient p) {
+	 public String addPatient(@ModelAttribute Patient p,Model model) {
       String msg=  ptser.addPatient(p);
-    return msg;
+      return msg;
 	 }
 
 

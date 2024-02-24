@@ -16,6 +16,9 @@
             color: #fff;
             padding: 10px;
             text-align: center;
+            display:flex;
+            justify-content:space-between;
+            
         }
 
         #sidebar {
@@ -59,12 +62,29 @@
          text-decoration:none;
         
         }
+        
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 
     <header>
+    <div>
         <h1>Hello  <span th:text="${p_name}"></span> !!!</h1>
+    </div>
+    <div>
+         <h1> Your Patient Id :<span th:text="${p_id}"> </span></h1>
+    </div>
     </header>
 
     <div id="sidebar">
@@ -83,6 +103,8 @@
             </div> 
         </div>
     </div>
+    
+   <a href="/"><button>Go Back</button></a>
 
 </body>
 </html>
